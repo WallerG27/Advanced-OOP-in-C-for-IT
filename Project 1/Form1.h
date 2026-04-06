@@ -173,21 +173,21 @@ namespace CppCLRWinFormsProject {
 
 		}
 #pragma endregion
-	/// <summary>
-	/// A C++/CLI field that holds a managed list of aCandlestick objects.
-	/// </summary>
+		/// <summary>
+		/// A C++/CLI field that holds a managed list of aCandlestick objects.
+		/// </summary>
 	private: List<aCandlestick^>^ ListCandles;
 
-	/// <summary>
-	/// A managed array of System::String^ references, typically used to store lines of text.
-	/// </summary>
+		   /// <summary>
+		   /// A managed array of System::String^ references, typically used to store lines of text.
+		   /// </summary>
 	private: array<String^>^ lines;
 
-	/// <summary>
-	/// Handles the Load Stock button click: shows an open-file dialog, reads the selected CSV file, 
-	/// loads candlestick data, configures the Start/End date pickers based on the loaded data, and 
-	/// applies a date filter. On error it clears loaded data and the grid.
-	/// </summary>
+		   /// <summary>
+		   /// Handles the Load Stock button click: shows an open-file dialog, reads the selected CSV file, 
+		   /// loads candlestick data, configures the Start/End date pickers based on the loaded data, and 
+		   /// applies a date filter. On error it clears loaded data and the grid.
+		   /// </summary>
 	private: System::Void Button_LoadStock_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		if (OpenFileDialog_LoadStock->ShowDialog() == System::Windows::Forms::DialogResult::OK)
@@ -252,38 +252,38 @@ namespace CppCLRWinFormsProject {
 		}
 	}
 
-	/// <summary>
-	/// Click event handler that updates the display by applying the current date filter.
-	/// </summary>
+		   /// <summary>
+		   /// Click event handler that updates the display by applying the current date filter.
+		   /// </summary>
 	private: System::Void Button_Update_Click(System::Object^ sender, System::EventArgs^ e) {
 		ApplyDateFilter();
 	}
 
-	/// <summary>
-	/// Event handler invoked when the StartDate value changes. Intended to apply a date filter 
-	/// (call is currently commented out).
-	/// </summary>
+		   /// <summary>
+		   /// Event handler invoked when the StartDate value changes. Intended to apply a date filter 
+		   /// (call is currently commented out).
+		   /// </summary>
 	private: System::Void DateTimePicker_StartDate_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 		//ApplyDateFilter();
 	}
-	
-	/// <summary>
-	/// Event handler called when the EndDate control's value changes. The handler currently does nothing (ApplyDateFilter call is commented out).
-	/// </summary>
+
+		   /// <summary>
+		   /// Event handler called when the EndDate control's value changes. The handler currently does nothing (ApplyDateFilter call is commented out).
+		   /// </summary>
 	private: System::Void DateTimePicker_EndDate_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 		//ApplyDateFilter();
 	}
 
-	/// <summary>
-	/// Event handler invoked when the content of a DataGridView cell is clicked.
-	/// </summary>
+		   /// <summary>
+		   /// Event handler invoked when the content of a DataGridView cell is clicked.
+		   /// </summary>
 	private: System::Void DataGridView_StockData_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 
-	/// <summary>
-	/// Creates a System::Data::DataTable from a list of aCandlestick objects, mapping each candlestick 
-	/// to a row. Returns nullptr if the input list is nullptr.
-	/// </summary>
+		   /// <summary>
+		   /// Creates a System::Data::DataTable from a list of aCandlestick objects, mapping each candlestick 
+		   /// to a row. Returns nullptr if the input list is nullptr.
+		   /// </summary>
 	private: System::Data::DataTable^ CreateDataTableFromCandles(System::Collections::Generic::List<aCandlestick^>^ list)
 	{
 		// If the input list is null, we cannot create a DataTable, so return null to indicate failure.
@@ -317,10 +317,10 @@ namespace CppCLRWinFormsProject {
 		return table;
 	}
 
-	/// <summary>
-	/// Filters the in-memory candle list by the StartDate/EndDate range, binds the filtered data to 
-	/// DataGridView_StockData, formats numeric columns, and refreshes the grid.
-	/// </summary>
+		   /// <summary>
+		   /// Filters the in-memory candle list by the StartDate/EndDate range, binds the filtered data to 
+		   /// DataGridView_StockData, formats numeric columns, and refreshes the grid.
+		   /// </summary>
 	private: void ApplyDateFilter()
 	{
 		// If we don't have any candles loaded, clear the grid and return
@@ -372,5 +372,5 @@ namespace CppCLRWinFormsProject {
 		DataGridView_StockData->Refresh();
 	}
 
-};
+	};
 }
