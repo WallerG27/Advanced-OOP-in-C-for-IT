@@ -4,22 +4,23 @@ using namespace System;
 
 namespace CppCLRWinFormsProject
 {
-    public ref class aCandlestick
+    public ref_class aCandlestick
     {
     public:
-        // IMPORTANT: These MUST be marked as 'property' for Windows Forms DataBinding to recognize them!
-        
-        property System::DateTime Date;
-        property double Open;
-        property double High;
-        property double Low;
-        property double Close;
-        property unsigned long Volume;
-
-        /// <summary>
-        /// Constructs an aCandlestick object representing an 
-        /// OHLCV candlestick for a specific date/time.
-        /// </summary>
+        // Properties MUST be capitalized (Date, Open, High...)
+        property System::DateTime date;
+        property double open;
+        property double high;
+        property double low;
+        property double close;
+        property unsigned long volume;
+        // Constructors
+        aCandlestick();
         aCandlestick(DateTime d, double o, double h, double l, double c, unsigned long v);
+        aCandlestick(aCandlestick^ sourceCandlestick);
+        aCandlestick(String^ fileLine);
+       
+        // Methods
+        void data(String^ fileLine);
     };
 }

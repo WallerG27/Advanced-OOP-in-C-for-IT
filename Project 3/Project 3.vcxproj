@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{66a86ccf-1339-438a-8e28-6c7811c935f2}</ProjectGuid>
+    <ProjectGuid>{72e69b87-aba5-43d0-a3ff-0c832cb86592}</ProjectGuid>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>Project_3</RootNamespace>
@@ -130,13 +130,26 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aCandlestick.h" />
+    <ClInclude Include="aCandlestickLoader.h" />
+    <ClInclude Include="aRecognizer.h" />
+    <ClInclude Include="aSmartCandlestick.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="recognizer_Black_Crow.h" />
+    <ClInclude Include="recognizer_Engulfing.h" />
+    <ClInclude Include="recognizer_Harami.h" />
+    <ClInclude Include="recognizer_Marubozu.h" />
+    <ClInclude Include="recognizer_White_Soldier.h" />
     <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="aCandlestick.cpp" />
+    <ClCompile Include="aCandlestickLoader.cpp" />
+    <ClCompile Include="aRecognizer.cpp" />
+    <ClCompile Include="aSmartCandlestick.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
@@ -146,6 +159,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="recognizer_Black_Crow.cpp" />
+    <ClCompile Include="recognizer_Engulfing.cpp" />
+    <ClCompile Include="recognizer_Harami.cpp" />
+    <ClCompile Include="recognizer_Marubozu.cpp" />
+    <ClCompile Include="recognizer_White_Soldier.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
